@@ -37,7 +37,7 @@ AddEventHandler('chatMessage', function(source, name, msg)
     if sm[1] == "/meall" then
       CancelEvent()
       TriggerClientEvent('chatMessage', -1, "^4[Global Handling] " .. getIdentity(source).firstname .. " ".. getIdentity(source).lastname .. "^4: " .. '^7' .. string.sub(msg,8))
-      PerformHttpRequest('https://discord.com/api/webhooks/772855204449615904/eehJjOKbCLZgq5CC6pd2VbCxi-MREIL3Ur6CwN-VB8ggdErB4LpL4WwzkW0G4rvdS0pV', function(err, text, headers) end, 'POST', json.encode({username = "[Global Handling]", content = "```["..user_idd.."]" .. " "..getIdentity(source).firstname.." "..getIdentity(source).lastname.. ": " ..msg.."```"}), { ['Content-Type'] = 'application/json' })
+      PerformHttpRequest('YourWebhookHere', function(err, text, headers) end, 'POST', json.encode({username = "[Global Handling]", content = "```["..user_idd.."]" .. " "..getIdentity(source).firstname.." "..getIdentity(source).lastname.. ": " ..msg.."```"}), { ['Content-Type'] = 'application/json' })
       CancelEvent()
       elseif sm[1] == "/mecredit" then
       CancelEvent()
